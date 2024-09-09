@@ -38,7 +38,7 @@ Clone the Repository:
 
 bash
 Copy code
-git clone https://github.com/yourusername/contract-monthly-claim-system.git
+git clone https://github.com/yourusername/contract-monthly-claim-system.git](https://github.com/TheAffiliate/asp.net)
 cd contract-monthly-claim-system
 Build the Solution: Open the solution in Visual Studio or use the terminal to run:
 
