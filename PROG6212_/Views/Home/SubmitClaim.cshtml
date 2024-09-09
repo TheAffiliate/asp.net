@@ -1,0 +1,178 @@
+﻿@{
+    ViewData["Title"] = "SubmitClaim";
+}
+
+@model PROG6212.Models.ClaimFormModel
+
+<!-- Cyberpunk Theme CSS (includes Bootstrap for Jumbotron) -->
+<style>
+    body {
+        background-color: #0d0d0d;
+        color: #00ffcc;
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    h1, h2 {
+        font-weight: bold;
+        color: #ff007f;
+        text-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f, 0 0 30px #ff007f;
+    }
+
+    .jumbotron {
+        background-color: #1a1a1a;
+        border: 2px solid #00ffcc;
+        box-shadow: 0 0 10px #00ffcc;
+        border-radius: 15px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .form-control {
+        background-color: #0d0d0d;
+        border: 1px solid #00ffcc;
+        color: #00ffcc;
+    }
+
+        .form-control:focus {
+            background-color: #1a1a1a;
+            border-color: #ff007f;
+            box-shadow: 0 0 5px #ff007f;
+        }
+
+    .btn-primary {
+        background-color: #ff007f;
+        border-color: #ff007f;
+        color: #0d0d0d;
+        box-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f;
+    }
+
+        .btn-primary:hover {
+            background-color: #00ffcc;
+            border-color: #00ffcc;
+            color: #0d0d0d;
+            box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+        }
+
+    .btn-secondary {
+        background-color: #00ffcc;
+        border-color: #00ffcc;
+        color: #0d0d0d;
+        box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+    }
+
+        .btn-secondary:hover {
+            background-color: #ff007f;
+            border-color: #ff007f;
+            color: #0d0d0d;
+            box-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f;
+        }
+
+    label {
+        color: #00ffcc;
+        text-shadow: 0 0 5px #00ffcc;
+    }
+
+    .text-danger {
+        color: #ff007f;
+        text-shadow: 0 0 5px #ff007f;
+    }
+
+    footer {
+        background-color: #1a1a1a;
+        border: 2px solid #00ffcc;
+        box-shadow: 0 0 10px #00ffcc;
+        border-radius: 15px;
+        padding: 2rem;
+        text-align: center;
+        margin-top: 2rem;
+    }
+</style>
+
+<!-- Jumbotron for the Outer Container -->
+<div class="jumbotron">
+    <!-- Page Header -->
+    <div class="text-center">
+        <h1 class="display-4">Create Or Edit Claim</h1>
+    </div>
+
+    <!-- Personal Details Section -->
+    <div class="border p-4 mt-4">
+        <h2>Personal Details</h2>
+        <div class="form-group">
+            <label asp-for="LecturerName"></label>
+            <input asp-for="LecturerName" class="form-control" />
+            <span asp-validation-for="LecturerName" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="LecturerSurname"></label>
+            <input asp-for="LecturerSurname" class="form-control" />
+            <span asp-validation-for="LecturerSurname" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="EmployeeNo"></label>
+            <input asp-for="EmployeeNo" class="form-control" />
+            <span asp-validation-for="EmployeeNo" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="ContactDetails"></label>
+            <input asp-for="ContactDetails" class="form-control" />
+            <span asp-validation-for="ContactDetails" class="text-danger"></span>
+        </div>
+    </div>
+
+    <!-- Claim Details Section -->
+    <div class="border p-4 mt-4">
+        <h2>Claim Details</h2>
+        <div class="form-group">
+            <label asp-for="Module"></label>
+            <input asp-for="Module" class="form-control" />
+            <span asp-validation-for="Module" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Programme"></label>
+            <input asp-for="Programme" class="form-control" />
+            <span asp-validation-for="Programme" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="NumberOfHours"></label>
+            <input asp-for="NumberOfHours" class="form-control" />
+            <span asp-validation-for="NumberOfHours" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="HourlyRate"></label>
+            <input asp-for="HourlyRate" class="form-control" />
+            <span asp-validation-for="HourlyRate" class="text-danger"></span>
+        </div>
+    </div>
+
+    <!-- Buttons Section -->
+    <div class="text-center mt-4">
+        <button type="submit" class="btn btn-primary" asp-action="VerifyClaim">Submit Claim</button>
+        <button type="button" class="btn btn-secondary" onclick="addModule()">Add Another Module</button>
+    </div>
+</div>
+
+<br />
+
+<!-- Footer without Containers -->
+
+<br />
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+<script>
+    function addModule() {
+        // Logic to handle adding another module
+        // (e.g., dynamically clone the claim details section)
+    }
+</script>

@@ -1,0 +1,89 @@
+﻿@{
+    ViewData["Title"] = "Verify Claim";
+}
+
+@model VerificationModel
+
+<!-- Cyberpunk Theme CSS -->
+<style>
+    body {
+        background-color: #0d0d0d;
+        color: #00ffcc;
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    h1, h2 {
+        font-weight: bold;
+        color: #ff007f;
+        text-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f, 0 0 30px #ff007f;
+    }
+
+    .jumbotron {
+        background-color: #1a1a1a;
+        border: 2px solid #00ffcc;
+        box-shadow: 0 0 10px #00ffcc;
+        border-radius: 15px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .form-control {
+        background-color: #0d0d0d;
+        border: 1px solid #00ffcc;
+        color: #00ffcc;
+    }
+
+    .form-control:focus {
+        background-color: #1a1a1a;
+        border-color: #ff007f;
+        box-shadow: 0 0 5px #ff007f;
+    }
+
+    .btn-primary {
+        background-color: #ff007f;
+        border-color: #ff007f;
+        color: #0d0d0d;
+        box-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f;
+    }
+
+    .btn-primary:hover {
+        background-color: #00ffcc;
+        border-color: #00ffcc;
+        color: #0d0d0d;
+        box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+    }
+
+    label {
+        color: #00ffcc;
+        text-shadow: 0 0 5px #00ffcc;
+    }
+
+    textarea {
+        height: 150px;
+    }
+</style>
+
+<!-- Jumbotron Container -->
+<div class="jumbotron">
+    <h1 class="display-4">Verify Claim</h1>
+
+    <!-- Verification Form -->
+    <form asp-action="VerifyClaim" method="post">
+        <div class="form-group">
+            <label>Status</label>
+            <select asp-for="Status" class="form-control">
+                <option value="Approved">Approve</option>
+                <option value="Rejected">Reject</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Comments"></label>
+            <textarea asp-for="Comments" class="form-control"></textarea>
+        </div>
+
+        <div class="text-center mt-4">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>

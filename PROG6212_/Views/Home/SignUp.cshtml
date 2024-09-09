@@ -1,0 +1,138 @@
+﻿@{
+    ViewData["Title"] = "Sign Up";
+}
+
+@model PROG6212.Models.SignUpModel
+
+<!-- Cyberpunk Theme CSS -->
+<style>
+    body {
+        background-color: #0d0d0d;
+        color: #00ffcc;
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    h1, h2 {
+        font-weight: bold;
+        color: #ff007f;
+        text-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f, 0 0 30px #ff007f;
+    }
+
+    .jumbotron {
+        background-color: #1a1a1a;
+        border: 2px solid #00ffcc;
+        box-shadow: 0 0 10px #00ffcc;
+        border-radius: 15px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .form-control {
+        background-color: #0d0d0d;
+        border: 1px solid #00ffcc;
+        color: #00ffcc;
+    }
+
+    .form-control:focus {
+        background-color: #1a1a1a;
+        border-color: #ff007f;
+        box-shadow: 0 0 5px #ff007f;
+    }
+
+    .btn-primary {
+        background-color: #ff007f;
+        border-color: #ff007f;
+        color: #0d0d0d;
+        box-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f;
+    }
+
+    .btn-primary:hover {
+        background-color: #00ffcc;
+        border-color: #00ffcc;
+        color: #0d0d0d;
+        box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+    }
+
+    .btn-secondary {
+        background-color: #00ffcc;
+        border-color: #00ffcc;
+        color: #0d0d0d;
+        box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+    }
+
+    .btn-secondary:hover {
+        background-color: #ff007f;
+        border-color: #ff007f;
+        color: #0d0d0d;
+        box-shadow: 0 0 10px #ff007f, 0 0 20px #ff007f;
+    }
+
+    label {
+        color: #00ffcc;
+        text-shadow: 0 0 5px #00ffcc;
+    }
+
+    .text-danger {
+        color: #ff007f;
+        text-shadow: 0 0 5px #ff007f;
+    }
+
+    footer {
+        background-color: #1a1a1a;
+        border: 2px solid #00ffcc;
+        box-shadow: 0 0 10px #00ffcc;
+        border-radius: 15px;
+        padding: 2rem;
+        text-align: center;
+        margin-top: 2rem;
+    }
+</style>
+
+<!-- Jumbotron for the Outer Container -->
+<div class="jumbotron">
+    <!-- Page Header -->
+    <div class="text-center">
+        <h1 class="display-4">Sign Up</h1>
+    </div>
+
+    <!-- Sign-Up Form -->
+    <form asp-action="SignUp" method="post">
+        <div class="form-group">
+            <label asp-for="Username"></label>
+            <input asp-for="Username" class="form-control" />
+            <span asp-validation-for="Username" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Email"></label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Password"></label>
+            <input asp-for="Password" type="password" class="form-control" />
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="ConfirmPassword"></label>
+            <input asp-for="ConfirmPassword" type="password" class="form-control" />
+            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+        </div>
+
+        <div class="text-center mt-4">
+            <button type="submit" class="btn btn-primary" asp-action="LogIn">Sign Up</button> 
+        </div>
+    </form>
+</div>
+
+<br />
+<!-- Footer -->
+<br />
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
